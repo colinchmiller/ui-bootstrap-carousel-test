@@ -1,17 +1,30 @@
 <!doctype html>
 <html ng-app="mainApp">
   <head>
-    <title>Testing</title>
+    <title>Carousel</title>
     <meta charset="UTF=8">
     <link rel="stylesheet" href="./vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/styles/stylesheet.css">
 
     <script type="text/javascript" src="./vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./vendors/angular/ui-bootstrap-tpls.js"></script>
     <script type="text/javascript" src="./assets/scripts/app.js"></script>
   </head>
 
-  <body ng-controller="TestController">
+  <body>
 
-    <h1>Testing</h1>
+    <div ng-controller="TestController">
+      <h1>Testing</h1>
+    </div>
+
+    <div ng-controller="ProtoCarousel">
+        {{name}}
+        <carousel interval="myInterval">
+          <slide ng-repeat="slide in slides" active="slide.active">
+            <img ng-src="{{slide.image}}">
+          </slide>
+        </carousel>
+    </div>
+
   </body>
 </html>
