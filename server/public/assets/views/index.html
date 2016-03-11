@@ -8,22 +8,22 @@
 
     <script type="text/javascript" src="./vendors/angular/angular.min.js"></script>
     <script type="text/javascript" src="./vendors/angular/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="./vendors/angular/angular-animate.min.js"></script>
     <script type="text/javascript" src="./assets/scripts/app.js"></script>
   </head>
 
   <body>
 
     <div ng-controller="TestController">
-      <h1>Testing</h1>
+      <h1>Carousel of Murrays</h1>
     </div>
 
     <div ng-controller="ProtoCarousel">
-        {{name}}
-        <carousel interval="myInterval">
-          <slide ng-repeat="slide in slides" active="slide.active">
-            <img ng-src="{{slide.image}}">
-          </slide>
-        </carousel>
+        <uib-carousel active="active" interval="myInterval">
+          <uib-slide ng-repeat="slide in slides" index="slide.id">
+            <img ng-src="{{slide.image}}" style="margin:auto">
+          </uib-slide>
+        </uib-carousel>
     </div>
 
   </body>
